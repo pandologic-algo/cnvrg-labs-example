@@ -37,7 +37,7 @@ if slack_token:
 def run_experimenter(experimnter_config, lab_config):
     experiment = LocalExperimenter(**experimnter_config, **lab_config)
 
-    experiment.run_experiments(lgbm_reg)
+    experiment.run_experiments(lgbm_reg_cnvrg_api)
 
 
 def test_skopt_searcher_local():
