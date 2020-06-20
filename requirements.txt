@@ -1,0 +1,4 @@
+labs==0.0.4
+lightgbm==2.3.1
+pandas==1.0.4
+python_dotenv==0.13.0

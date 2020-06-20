@@ -1,0 +1,28 @@
+# Data #
+###################
+*.pickle
+*.parquet
+.env
+
+# Dask #
+###################
+dask-worker-space/
+
+# IDEA config files #
+###################
+.idea/
+
+# bytecode #
+############
+__pycache__/
+
+# vscode #
+############
+.vscode/
+.devcontainer/
+
+# Packages #
+############
+*.zip
+
+
