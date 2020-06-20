@@ -4,7 +4,7 @@ import os
 from cnvrg import Experiment
 
 
-def train_api(experiment, artifacts_path, metrics):
+def lgbm_reg_cnvrg_api(experiment, artifacts_path, metrics):
     # type handling when saving json (numpy types)
     def default(o):
         if isinstance(o, np.int) or isinstance(o, np.int16) or isinstance(o, np.int32) or isinstance(o, np.int64):

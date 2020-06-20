@@ -9,7 +9,7 @@ sys.path.append(cwd)
 # internal
 from labs.experimenting import LocalExperimenter
 from research.lgbm_reg.train import lgbm_reg
-from research.lgbm_reg import train_api
+from research.lgbm_reg import lgbm_reg_cnvrg_api
 from research.utils.secrets import slack_token
 
 

@@ -9,7 +9,7 @@ sys.path.append(cwd)
 # internal
 from labs.lab import LabManager
 from research.lgbm_reg.train import lgbm_reg
-from research.lgbm_reg import train_api
+from research.lgbm_reg import lgbm_reg_cnvrg_api
 from research.utils.secrets import slack_token
 
 
@@ -19,7 +19,7 @@ config_path = 'research/utils/experimenters_config.json'
 
 def run_lab(experiment_name):
     # experimenters callables
-    experiments_callables = {experiment_name: lgbm_reg}
+    experiments_callables = {experiment_name: lgbm_reg_cnvrg_api}
 
     # configs
     with open(config_path, 'r') as fp:
