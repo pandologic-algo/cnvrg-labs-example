@@ -57,7 +57,7 @@ def test_skopt_searcher_local():
         n_experiments=40,
         experiments_batch_size=4,
         type='skopt',
-        score_threshold=16900,
+        score_threshold=15000,
         delete_experiments=False
     )
 
@@ -96,7 +96,7 @@ def test_grid_search_local():
         space=space_config,
         experiments_batch_size=4,
         type='grid-search',
-        score_threshold=16900
+        score_threshold=15000
     )
 
     gs_experimenter_config = dict(
@@ -136,7 +136,7 @@ def test_random_search_local():
         n_experiments=40,
         experiments_batch_size=4,
         type='random-search',
-        score_threshold=16900,
+        score_threshold=15000,
         delete_experiments=False
     )
 

@@ -44,7 +44,7 @@
         "search_params": {},
         "experiments_batch_size": 4,
         "type": "grid-search",
-        "score_threshold": 16900,
+        "score_threshold": 15000,
         "delete_experiments": false
       },
       "evaluation_config": {
@@ -104,7 +104,7 @@
         "n_experiments": 40,
         "experiments_batch_size": 4,
         "type": "random-search",
-        "score_threshold": 16900,
+        "score_threshold": 15000,
         "delete_experiments": false
       },
       "evaluation_config": {
@@ -167,7 +167,7 @@
         "n_experiments": 40,
         "experiments_batch_size": 4,
         "type": "skopt",
-        "score_threshold": 16900,
+        "score_threshold": 15000,
         "delete_experiments": false
       },
       "evaluation_config": {
