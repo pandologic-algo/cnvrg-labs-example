@@ -18,10 +18,11 @@ def lgbm_reg_cnvrg_api(experiment, artifacts_path, metrics):
     metrics_dumped = json.dumps(metrics, default=default)
 
     cmd = "python3 research/lgbm_reg/train.py --experiment '{}' --artifacts_path '{}' --metrics '{}'".format(experiment_dumped,
-                                                                                                       artifacts_path,
-                                                                                                       metrics_dumped)
+                                                                                                             artifacts_path,
+                                                                                                             metrics_dumped)
     # os.system(cmd)
     e = Experiment.run(cmd, 
+                       title='lgbm_reg_experiment-{}'.format(experiment['ix']),
                        compute='medium',
                        output_dir='research/artifacts',
                        sync_before=False)
