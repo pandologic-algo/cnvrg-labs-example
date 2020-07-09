@@ -51,7 +51,7 @@ def lgbm_reg_cnvrg_api(experiment, artifacts_path, metrics):
     # os.system(cmd)
     e = Experiment.run(cmd, 
                        title='lgbm_reg_experiment-{}'.format(experiment.get('ix')),
-                       arguments={'experiment_ix': experiment_ix
+                       arguments={'experiment_ix': experiment_ix,
                                   'hyperparams': hyperparams_dumped, 
                                   'artifacts_path': artifacts_path, 
                                   'metrics': metrics_dumped},
