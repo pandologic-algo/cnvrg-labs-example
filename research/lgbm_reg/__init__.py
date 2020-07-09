@@ -13,8 +13,9 @@ def lgbm_reg_cnvrg_api(experiment, artifacts_path, metrics):
                 isinstance(o, np.float64):
             return float(o)
         raise TypeError
-
-    experiment_dumped = json.dumps(experiment, default=default)
+    
+    experiment_ix = experiment.get('ix')
+    hyperparams_dumped = json.dumps(experiment.get('hyperparams'), default=default)
     metrics_dumped = json.dumps(metrics, default=default)
 
     # cmd = "python3 research/lgbm_reg/train.py --experiment '{}' --artifacts_path '{}' --metrics '{}'".format(experiment_dumped,
@@ -25,8 +26,11 @@ def lgbm_reg_cnvrg_api(experiment, artifacts_path, metrics):
 
     # os.system(cmd)
     e = Experiment.run(cmd, 
-                       title='lgbm_reg_experiment-{}'.format(experiment['ix']),
-                       arguments={'experiment': experiment_dumped, 'artifacts_path': artifacts_path, 'metrics': metrics_dumped},
+                       title='lgbm_reg_experiment-{}'.format(experiment.get('ix')),
+                       arguments={'experiment_ix': experiment_ix
+                                  'hyperparams': hyperparams_dumped, 
+                                  'artifacts_path': artifacts_path, 
+                                  'metrics': metrics_dumped},
                        compute='medium',
                        output_dir='research/artifacts',
                        sync_before=False)

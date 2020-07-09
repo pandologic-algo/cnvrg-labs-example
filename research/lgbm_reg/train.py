@@ -94,7 +94,11 @@ def lgbm_reg(experiment, artifacts_path, metrics):
 def get_parser():
     parser = argparse.ArgumentParser(description='Experiment params')
 
-    parser.add_argument('--experiment',
+    parser.add_argument('--experiment_ix',
+                        action='store',
+                        type=int)
+
+    parser.add_argument('--hyperparams',
                         action='store',
                         type=str)
 
@@ -112,13 +116,15 @@ def get_parser():
 def process_arg_parser(parser):
     args = parser.parse_args()
 
-    experiment = args.experiment
+    experiment = {'ix': args.experiment_ix, 'hyperparams': json.loads(args.hyperparams)}
+
+    hyperparams = args.hyperparams
 
     artifacts_path = args.artifacts_path
 
     metrics = args.metrics
 
-    kwargs = {'experiment': json.loads(experiment), 
+    kwargs = {'experiment': experiment, 
               'artifacts_path': artifacts_path, 
               'metrics': json.loads(metrics)}
 
