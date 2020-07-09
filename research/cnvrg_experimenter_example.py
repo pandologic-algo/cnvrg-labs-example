@@ -61,6 +61,6 @@ def lgbm_reg_cnvrg_api(experiment, artifacts_path, metrics):
 
   
 if __name__ == "__main__":
-    experiment_file_path = "research/lgbm_reg/train.py
+    experiment_file_path = "research/lgbm_reg/train.py"
 
     run_library()
