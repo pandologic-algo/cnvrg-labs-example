@@ -25,6 +25,9 @@ features_names=['col1', 'col2', 'col3', 'col4', 'col5', 'col6', 'col7',
 
 @experiment_path
 def lgbm_reg(experiment, artifacts_path, metrics):
+    e = Experiment()
+    [e.log_param(param, val) for param, val in experiment.get('hyperparams').items()]
+
     # init
     data = load_data(data_path)
     cv_data = create_cv_data(data['X_train'], data['y_train'], cv_config=cv_config)
@@ -109,7 +112,7 @@ def get_parser():
 def process_arg_parser(parser):
     args = parser.parse_args()
 
-    experiment = args.experiment
+    experiment_ix = args.experiment_ix
 
     artifacts_path = args.artifacts_path
 
@@ -120,6 +123,21 @@ def process_arg_parser(parser):
               'metrics': json.loads(metrics)}
 
     return kwargs
+
+# def process_arg_parser(parser):
+#     args = parser.parse_args()
+
+#     experiment = args.experiment
+
+#     artifacts_path = args.artifacts_path
+
+#     metrics = args.metrics
+
+#     kwargs = {'experiment': json.loads(experiment), 
+#               'artifacts_path': artifacts_path, 
+#               'metrics': json.loads(metrics)}
+
+#     return kwargs
 
 
 if __name__ == '__main__':
