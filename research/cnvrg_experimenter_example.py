@@ -45,7 +45,6 @@ def lgbm_reg_cnvrg_api(experiment, artifacts_path, metrics):
     experiment_ix = experiment.get('ix')
     hyperparams_dumped = json.dumps(experiment.get('hyperparams'), default=default)
     metrics_dumped = json.dumps(metrics, default=default)
-                                                                                                metrics_dumped)
 
     cmd = "python3 {}".format(experiment_file_path)
 
