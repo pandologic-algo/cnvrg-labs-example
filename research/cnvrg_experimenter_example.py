@@ -1,3 +1,5 @@
+import os
+import sys
 from cnvrg import Experiment, Library
 
 # labs
@@ -52,9 +54,9 @@ def lgbm_reg_cnvrg_api(experiment, artifacts_path, metrics):
     e = Experiment.run(cmd, 
                        title='lgbm_reg_experiment-{}'.format(experiment.get('ix')),
                        arguments={'experiment_ix': experiment_ix,
-                                  'hyperparams': hyperparams_dumped, 
+                                  'hyperparams':  "'{}'".format(hyperparams_dumped), 
                                   'artifacts_path': artifacts_path, 
-                                  'metrics': metrics_dumped},
+                                  'metrics': "'{}'".format(metrics_dumped)},
                        compute='medium',
                        output_dir='research/artifacts',
                        sync_before=False)
