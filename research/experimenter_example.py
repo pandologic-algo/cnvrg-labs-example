@@ -54,7 +54,7 @@ def test_skopt_searcher_local():
     tune_config = dict(
         search_params=dict(random_state=1234, base_estimator='GP', n_initial_points=5),
         space=space_config,
-        n_experiments=40,
+        n_experiments=6,
         experiments_batch_size=4,
         type='skopt',
         score_threshold=15000,
