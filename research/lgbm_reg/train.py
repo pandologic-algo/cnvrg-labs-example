@@ -112,7 +112,7 @@ def get_parser():
 def process_arg_parser(parser):
     args = parser.parse_args()
 
-    experiment_ix = args.experiment_ix
+    experiment = args.experiment
 
     artifacts_path = args.artifacts_path
 
@@ -123,21 +123,6 @@ def process_arg_parser(parser):
               'metrics': json.loads(metrics)}
 
     return kwargs
-
-# def process_arg_parser(parser):
-#     args = parser.parse_args()
-
-#     experiment = args.experiment
-
-#     artifacts_path = args.artifacts_path
-
-#     metrics = args.metrics
-
-#     kwargs = {'experiment': json.loads(experiment), 
-#               'artifacts_path': artifacts_path, 
-#               'metrics': json.loads(metrics)}
-
-#     return kwargs
 
 
 if __name__ == '__main__':
